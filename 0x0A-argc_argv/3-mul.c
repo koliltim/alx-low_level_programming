@@ -54,9 +54,7 @@ int _atoi(char *s)
  * Return: 0 (Success), 1 (Error)
  */
 int main(int argc, char *argv[])
-
 {
-	
 	int result, num1, num2;
 
 	if (argc < 3 || argc > 3)
@@ -72,5 +70,4 @@ int main(int argc, char *argv[])
 	printf("%d\n", result);
 
 	return (0);
-
 }
