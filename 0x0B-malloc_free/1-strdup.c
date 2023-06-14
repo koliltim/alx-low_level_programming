@@ -1,18 +1,32 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * main - print the number of arguments passed to the program
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: Always 0 (Success)
- */
-
-int main(int argc, char *argv[])
+* _strdup - returns a pointer to a newly allocated space in memory,
+* which contains a copy of the string given as a parameter.
+* @str: the source string
+*
+* Return: returns a pointer to the duplicated string.
+* It returns NULL if insufficient memory was available
+*/
+char *_strdup(char *str)
 {
-(void) argv; /*Ignore argv*/
-	printf("%d\n", argc - 1);
+  char *copy;
+  int i, len = 0;
 
-	return (0);
+  if (str == NULL)
+     return (NULL);
+
+  while (str[len] != '\0')
+     len++;
+
+  copy = (char *)malloc((sizeof(char) * len) + 1);
+  if (copy == NULL)
+     return (NULL);
+
+  for (i = 0; i < len; i++)
+     copy[i] = str[i];
+  copy[len] = '\0';
+
+  return (copy);
 }
